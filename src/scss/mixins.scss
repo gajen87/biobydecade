@@ -1,0 +1,146 @@
+// mixins
+$spaceamounts: (0, 1, 2, 3, 4, 5);
+@each $space in $spaceamounts {
+    .m-#{$space} {
+        margin: #{$space}rem !important;
+    }
+    .my-#{$space} {
+        margin: {
+            top: #{$space}rem !important;
+            bottom: #{$space}rem !important;
+        }
+    }
+    .mx-#{$space} {
+        margin: {
+            left: #{$space}rem !important;
+            right: #{$space}rem !important;
+        }
+    }
+    .ml-#{$space} {
+        margin-left: #{$space}rem !important;
+    }
+    .mr-#{$space} {
+        margin-right: #{$space}rem !important;
+    }
+    .mt-#{$space} {
+        margin-top: #{$space}rem !important;
+    }
+    .mb-#{$space} {
+        margin-bottom: #{$space}rem !important;
+    }
+
+    .p-#{$space} {
+        padding: #{$space}rem !important;
+    }
+    .py-#{$space} {
+        padding: {
+            top: #{$space}rem !important;
+            bottom: #{$space}rem !important;
+        }
+    }
+    .px-#{$space} {
+        padding: {
+            left: #{$space}rem !important;
+            right: #{$space}rem !important;
+        }
+    }
+    .pl-#{$space} {
+        padding-left: #{$space}rem !important;
+    }
+    .pr-#{$space} {
+        padding-right: #{$space}rem !important;
+    }
+    .pt-#{$space} {
+        padding-top: #{$space}rem !important;
+    }
+    .pb-#{$space} {
+        padding-bottom: #{$space}rem !important;
+    }
+}
+
+$spacepixel: (5, 8, 10, 15, 16, 20, 25);
+@each $space in $spacepixel {
+    .m-px-#{$space} {
+        margin: #{$space}px !important;
+    }
+    .my-px-#{$space} {
+        margin: {
+            top: #{$space}px !important;
+            bottom: #{$space}px !important;
+        }
+    }
+    .mx-px-#{$space} {
+        margin: {
+            left: #{$space}px !important;
+            right: #{$space}px !important;
+        }
+    }
+    .ml-px-#{$space} {
+        margin-left: #{$space}px !important;
+    }
+    .mr-px-#{$space} {
+        margin-right: #{$space}px !important;
+    }
+    .mt-px-#{$space} {
+        margin-top: #{$space}px !important;
+    }
+    .mb-px-#{$space} {
+        margin-bottom: #{$space}px !important;
+    }
+
+    .p-px-#{$space} {
+        padding: #{$space}px !important;
+    }
+    .py-px-#{$space} {
+        padding: {
+            top: #{$space}px !important;
+            bottom: #{$space}px !important;
+        }
+    }
+    .px-px-#{$space} {
+        padding: {
+            left: #{$space}px !important;
+            right: #{$space}px !important;
+        }
+    }
+    .pl-px-#{$space} {
+        padding-left: #{$space}px !important;
+    }
+    .pr-px-#{$space} {
+        padding-right: #{$space}px !important;
+    }
+    .pt-px-#{$space} {
+        padding-top: #{$space}px !important;
+    }
+    .pb-px-#{$space} {
+        padding-bottom: #{$space}px !important;
+    }
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin grayscale-element($value) {
+    -webkit-filter: #{"grayscale(#{$value})"};
+    -moz-filter: #{"grayscale(#{$value})"};
+    filter: #{"grayscale(#{$value})"};
+}
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+}
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+        -webkit-box-shadow: inset $top $left $blur $color;
+        -moz-box-shadow: inset $top $left $blur $color;
+        box-shadow: inset $top $left $blur $color;
+    } @else {
+        -webkit-box-shadow: $top $left $blur $color;
+        -moz-box-shadow: $top $left $blur $color;
+        box-shadow: $top $left $blur $color;
+    }
+}

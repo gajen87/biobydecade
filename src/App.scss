@@ -1,0 +1,496 @@
+@import './scss/font/font.scss';
+@import './scss/rem-calc.scss';
+@import './scss/mixins.scss';
+@import './scss/variables.scss';
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+html {
+  body {
+    font-family: 'Roboto';
+    font-weight: 300;
+    h1.MuiTypography-root,
+    h2.MuiTypography-root,
+    h3.MuiTypography-root,
+    h4.MuiTypography-root,
+    h5.MuiTypography-root,
+    h6.MuiTypography-root {
+      font-weight: 300;
+    }
+  }
+}
+
+.align-center {
+  text-align: center;
+}
+
+.sub-hding {
+  color: #8b959a;
+  font-size: 12px;
+}
+
+// buttons
+%buttonstyle {
+  min-height: 40px;
+  padding: {
+    left: 30px;
+    right: 30px;
+  }
+}
+button {
+  &.MuiButton-root {
+    @include border-radius(3px);
+    @include box-shadow(0, 0, 0, 0 !important);
+    text-transform: none;
+    font-size: 16px;
+  }
+  &.MuiButton {
+    &-containedPrimary {
+      background-color: $primary-color;
+      @extend %buttonstyle;
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+    &-containedSecondary {
+      background-color: $secondary-color;
+      @extend %buttonstyle;
+      color: $primary-color;
+      &:hover {
+        background-color: darken($secondary-color, 5%);
+      }
+    }
+    &-outlinedPrimary {
+      border-color: $primary-color;
+      color: $primary-color;
+    }
+  }
+}
+
+label {
+  &.MuiFormLabel-root {
+    &.Mui-focused {
+      color: $primary-color;
+    }
+  }
+}
+.MuiInputBase-root {
+  &.MuiInput-underline {
+    &:before {
+      border-bottom: 1px solid #c4c4c4;
+    }
+    &:after,
+    &:hover:not(.Mui-disabled):before {
+      border-bottom-width: 1px;
+    }
+    &:after {
+      border-bottom-color: $primary-color;
+    }
+  }
+}
+
+// end
+a {
+  color: $link-color;
+  text-decoration: none;
+}
+
+.pl-70 {
+  padding-left: 73px;
+}
+
+.app-container {
+  border: none;
+}
+
+.fwidth {
+  width: 100%;
+}
+
+.theme-btn {
+  background-color: #fe4b66;
+  border-radius: 5px;
+  height: 46px;
+  margin: 20px;
+  color: white;
+  font-weight: 800;
+  margin-left: auto;
+  margin-right: auto;
+  width: 335px;
+  font-size: 12px;
+  border: none;
+}
+.theme-bg-img {
+  max-width: max-content;
+}
+
+.social-btns {
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.theme-btn-wrap {
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  flex-flow: column;
+  margin-top: 68px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.right-content {
+  margin-top: 5%;
+}
+.main-heading {
+  float: left;
+  font-size: 18px;
+  font-weight: 900;
+}
+.g-login {
+  background-color: #dc4e41;
+  margin-bottom: 15px;
+}
+.fb-login {
+  background-color: #475993;
+}
+
+input {
+  background: #fafafa;
+  height: 42px;
+  border: 1px solid #858585;
+  border-color: #858585;
+  color: #212121;
+  border-radius: 5px;
+}
+.hr {
+  width: 335px;
+  height: 1px;
+  color: lightgray;
+}
+.c-theme {
+  color: $primary-color;
+}
+
+.f-12 {
+  font-size: 12px;
+}
+
+.login-mid-heading {
+  font-size: 12px;
+  float: left;
+  padding-left: 50px;
+}
+
+.success-msg {
+  text-align: start;
+}
+.pdiv-err {
+  position: relative;
+}
+.errordiv {
+  position: absolute;
+}
+
+.loginBg {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ef4e64;
+  line-height: 0;
+  text-align: center;
+}
+.signin-form-container {
+  padding: 10em 10rem 0 5rem;
+}
+.signup-form-container {
+  padding: 3em 10rem 0 5rem;
+}
+
+.loginBtn {
+  display: inline-block;
+  width: auto;
+  font-size: 14px !important;
+}
+
+p {
+  margin: 0;
+}
+
+.error {
+  font-size: 12px;
+  margin-top: 0;
+  color: red;
+  position: relative;
+  top: 5px;
+  font-weight: 400;
+}
+
+.signup_success {
+  a {
+    color: #fff;
+  }
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.headerLogo {
+  height: 24px;
+  img {
+    height: 30px;
+    object-fit: cover;
+  }
+}
+.topHeader {
+  &.MuiAppBar-root {
+    @include box-shadow(0, 4px, 10px, rgba(0, 0, 0, 0.1));
+    .MuiToolbar-regular {
+      min-height: 60px;
+      height: 60px;
+      background-color: $white-color;
+    }
+    .menuButton {
+      background-color: $primary-color;
+      @include border-radius(0);
+      height: 60px;
+      width: 54px;
+      position: relative;
+      left: -12px;
+      .MuiSvgIcon-root {
+        color: $white-color;
+      }
+    }
+    .MuiSvgIcon-root {
+      color: #1d1d1d;
+    }
+    .loginButton {
+      padding: 0;
+      margin-left: 20px;
+      min-width: 45px;
+      height: 45px;
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        @include border-radius(50%);
+        @include box-shadow(2px, 2px, 12px, rgba(0, 0, 0, 0.4));
+      }
+    }
+    .notifyIcon {
+      img {
+        padding: 3px;
+      }
+      .MuiBadge-badge {
+        top: 6px;
+        right: -7px;
+      }
+    }
+  }
+}
+
+.bg-White {
+  background-color: #fff;
+}
+
+.uploadProfilePic {
+  input[type='file'] {
+    opacity: 0;
+  }
+}
+
+.MuiPaper-root {
+  &.paperDroplist {
+    @include box-shadow(2px, 2px, 12px, rgba(0, 0, 0, 0.2));
+  }
+}
+.BasicDialog {
+  .MuiDialog-paper {
+    width: 468px;
+  }
+  .MuiBackdrop-root {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  .BasicDialogHeaderBg {
+    width: 100%;
+    height: 101px;
+    background: linear-gradient(180deg, #5100c4 0%, $primary-color 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    img {
+      padding-right: 40px;
+    }
+  }
+}
+
+.container {
+  padding: 20px 15px 0;
+  width: 100%;
+  min-height: calc(100vh - 95px);
+  display: flex;
+  flex-direction: column;
+  clear: both;
+  .container-inside {
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    flex-grow: 1;
+  }
+}
+
+.heading_wrapper {
+  position: relative;
+  .headingBtn {
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+  }
+}
+
+.tableHeader {
+  font-weight: 400;
+  border-bottom: 1px solid #ccc;
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.tableRow {
+  display: flex;
+  align-items: center;
+}
+
+.heading {
+  font-weight: bold;
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+  color: $primary-color;
+  font-weight: 400;
+  border-bottom: 1px solid #ccc;
+  display: block;
+}
+
+.actions-row {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.w100 {
+  width: 100%;
+}
+
+.uploadProfilePic {
+  display: flex;
+  align-items: center;
+  .imageBox {
+    max-width: 60px;
+    max-height: 60px;
+    overflow: hidden;
+    img {
+      border: 1px solid #f1f1f1;
+      max-width: 100%;
+    }
+  }
+}
+
+.drawerMenu {
+  width: 250px;
+  .MuiSvgIcon-colorPrimary {
+    color: #fff;
+  }
+  a {
+    color: #fff;
+  }
+}
+.DrawerMenu {
+  .MuiPaper-root {
+    background-color: $primary-color;
+  }
+  .MuiPaper-root {
+    color: #fff;
+  }
+  .MuiIconButton-root {
+    color: #fff;
+  }
+}
+
+.genderLabels {
+  .MuiFormGroup-root {
+    flex-direction: initial;
+  }
+}
+
+.links {
+  .checkBoxStyle {
+    color: $primary-color !important;
+  }
+}
+
+.MuiPickersToolbar-toolbar {
+  background-color: $primary-color !important;
+}
+.MuiPickersDay-daySelected {
+  background-color: $primary-color !important;
+}
+
+.cursor {
+  cursor: pointer;
+  color: $primary-color;
+}
+
+.usersList {
+  position: relative;
+  .addUserBtn {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    background-color: $primary-color !important;
+    color: $primary-color;
+    svg {
+      color: #fff;
+    }
+  }
+}
+
+.headerUserMenu {
+  z-index: 999;
+}
+
+.ModalHeading {
+  margin: 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #f1f1f1;
+  h2 {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.inputForm {
+  margin-top: 16px !important;
+}
+
+.tableParent {
+  .tableHeader{
+    .grow {
+      border-bottom:0;
+    }
+  }
+  .grow {
+    border-bottom: 1px solid #f1f1f1;
+    &:hover {
+      background-color: #f1f1f1;
+    }
+  }
+}

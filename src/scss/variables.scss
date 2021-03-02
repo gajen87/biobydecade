@@ -1,0 +1,16 @@
+// variables
+
+$primary-color: #ef4e64;
+$secondary-color: #f1acb5;
+$white-color: #ffffff;
+$black-color: #000000;
+$link-color: #4990e2;
+
+// font sizes
+@for $i from 1 through 60 {
+  $base: 1;
+  $fontsize: $base * $i;
+  .font-#{$fontsize} {
+    font-size: $fontsize + 0px !important;
+  }
+}

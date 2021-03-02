@@ -1,0 +1,16 @@
+export const ENDPOINTS = {
+  LOGINUSER: "Login",
+  LOGINUSER1: "auth/login",
+  SIGNUP: "auth/signup",
+  FORGOTPASSWORD: "password/forget",
+  RESETLINKCHECK: "password/linkcheck",
+  POST_RESET_PASSWORD: "password/resetpassword",
+  USER_BIO: "biography/userbio",
+  USERBIO_BY_ID: "biography/userbiobyid",
+  EDIT_BIO: "biography/editbio",
+  USER_BIRTH_BIO: "biography/userbirthdeathinfo",
+  GETPARENTS: "biography/getParents",
+  POSTPARENT: "biography/parents",
+  GETSPOUSES: "biography/spouses",
+  GETSGNIFICANT: "biography/significant",
+}
